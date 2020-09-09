@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0px;
+        background-image: url("./volleyball.jpg");
+        background-size: cover;
+        /* background-repeat: no-repeat; */
+        background-attachment: fixed;
+        background-position: center;
+        opacity: 0.8;
+      }
+      .test {
+        color: steelblue;
+        display: none;
+      }
+
+      .l-layout {
+        background-color: lightslategray;
+        height: 300px;
+        width: 300px;
+        margin-right: 100px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      @media print {
+        .test {
+          display: block;
+        }
+
+        .test > img {
+          height: 200px;
+          width: 200px;
+          border-radius: 50%;
+        }
+        body {
+          -webkit-print-color-adjust: exact;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-image: none;
+          background-color: azure !important;
+        }
+        .l-layout {
+          display: none;
+        }
+      }
+      @page {
+        size: A4 portrait;
+        /* margin: 1cm; */
+        /* padding: 1cm; */
+        orphans: 4;
+        widows: 2;
+      }
+
+      .l-margin {
+        margin: 10px;
+      }
+      button {
+        border: 0px;
+        opacity: 0.8;
+        background-color: lightslategray;
+        color: rgb(39, 39, 235);
+      }
+      .avater {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background: url("./0167230738fd9cd4.jpg");
+        display: flex;
+        margin: 0 auto 10px;
+        overflow: hidden;
+        background-position: center;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test">
+      <h1 class="title">Paged Media</h1>
+      <img src="./0167230738fd9cd4.jpg" />
+    </div>
+    <div class="l-layout">
+      <div class="l-margin">
+        <div class="avater"></div>
+        <label>帳號：</label>
+        <input type="text" placeholder="請輸入帳號" />
+      </div>
+      <div class="l-margin">
+        <label>密碼：</label> <input type="password" placeholder="請輸入密碼" />
+      </div>
+      <span><button>註冊</button> <button>登入</button></span>
+    </div>
+  </body>
+</html>
