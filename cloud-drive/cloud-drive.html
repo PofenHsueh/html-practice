@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        margin: 0px;
+        background-color: black;
+        display: inline-flex;
+        height: 100%;
+        width: 100vw;
+      }
+      h3,
+      h4,
+      h5,
+      p {
+        font-weight: 300;
+        color: white;
+      }
+      .navbar {
+        position: fixed;
+        left: 0;
+        width: 300px;
+        background-color: #2f3136;
+        padding: 0px 30px;
+        text-align: center;
+        height: 100%;
+        box-sizing: border-box;
+      }
+      .navbar > img {
+        margin-top: 40px;
+      }
+      .navbar > button {
+        height: 52px;
+        width: 100%;
+        border-radius: 50px;
+        background-color: #ffd46e;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 40px 0px;
+      }
+      .navbar > button > h3 {
+        margin: 0px;
+        color: black;
+        font-weight: bold;
+      }
+      .navbar-icons {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-weight: 300;
+        align-items: center;
+      }
+      .navbar-icons > span {
+        display: inline-flex;
+        padding: 20px;
+        text-align: left;
+      }
+      .navbar-icons > span > p {
+        margin: 0px 0px 0px 10px;
+        width: 100px;
+      }
+      .l-right {
+        margin-left: 300px;
+        flex: 1 1 auto;
+        padding: 55px 30px 0px 30px;
+        display: flex;
+        flex-direction: column;
+      }
+      .l-right > span {
+        color: #f3f2ef;
+        display: inline-flex;
+      }
+      .search {
+        margin-left: auto;
+        width: 400px;
+        height: 52px;
+        background-color: #2f3136;
+        border-radius: 7px;
+        border-width: 0px;
+      }
+      .datas {
+        margin-top: 20px;
+        height: 100px;
+        width: 24%;
+        background-color: #2f3136;
+        border-radius: 7px;
+      }
+      .l-data {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .l-img {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .imgs {
+        margin-top: 20px;
+        width: 24%;
+        height: 300px;
+        background-color: #2f3136;
+        border-radius: 7px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .imgs > img {
+        width: 100%;
+        flex: 1 1 auto;
+      }
+      .imgs > p {
+        margin: 10px 0px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <img src="./logo.png" />
+      <button>
+        <img src="./icon-file-upload.png" />
+        <h3>上傳檔案</h3>
+      </button>
+      <div class="navbar-icons">
+        <span>
+          <i class="fa fa-file"></i>
+          <p>上傳資料夾</p>
+        </span>
+        <span>
+          <i class="fa fa-file"></i>
+          <p>新資料夾</p>
+        </span>
+        <span>
+          <i class="fa fa-file"></i>
+          <p>共享資料夾</p>
+        </span>
+        <span>
+          <i class="fa fa-file"></i>
+          <p>已標記星號</p>
+        </span>
+        <span>
+          <i class="fa fa-file"></i>
+          <p>垃圾桶</p>
+        </span>
+      </div>
+    </nav>
+    <!--left-->
+    <div class="l-right">
+      <span>
+        <h3>我的雲端硬碟 ></h3>
+        <h4>The F2E 2nd UI 設計資源</h4>
+        <input class="search" placeholder="搜尋你的檔案" />
+      </span>
+
+      <div>
+        <h5>資料夾</h5>
+        <div class="l-data">
+          <div class="datas">1</div>
+          <div class="datas">2</div>
+          <div class="datas">3</div>
+          <div class="datas">4</div>
+          <div class="datas">5</div>
+          <div class="datas">6</div>
+          <div class="datas">7</div>
+          <div class="datas">8</div>
+          <div class="datas">9</div>
+        </div>
+      </div>
+
+      <div>
+        <h5>檔案</h5>
+        <div>
+          <div class="l-img">
+            <div class="imgs">
+              <img src="./a.png" />
+              <p>90s 挑戰遊戲封面.png</p>
+            </div>
+            <div class="imgs">
+              <img src="./a.png" />
+              <p>90s 挑戰遊戲封面.png</p>
+            </div>
+            <div class="imgs">
+              <img src="./a.png" />
+              <p>90s 挑戰遊戲封面.png</p>
+            </div>
+            <div class="imgs">
+              <img src="./a.png" />
+              <p>90s 挑戰遊戲封面.png</p>
+            </div>
+            <div class="imgs">
+              <img src="./a.png" />
+              <p>90s 挑戰遊戲封面.png</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
