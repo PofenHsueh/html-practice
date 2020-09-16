@@ -8,6 +8,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <style>
+      * {
+        -webkit-print-color-adjust: exact !important;
+      }
       body {
         margin: 0px;
         background-color: black;
@@ -74,12 +77,10 @@
         margin-left: 300px;
         flex: 1 1 auto;
         padding: 25px 30px 0px 30px;
-        display: flex;
-        flex-direction: column;
       }
       .l-right > span {
         color: #f3f2ef;
-        display: inline-flex;
+        display: flex;
       }
       .search {
         margin-left: auto;
@@ -123,15 +124,64 @@
       .imgs > p {
         margin: 10px 0px;
       }
+      .page-cover {
+        display: none;
+      }
+      @media print {
+        body {
+          display: block;
+        }
+        .page-cover {
+          height: 100vh;
+          display: flex;
+          page-break-after: always;
+          color: seashell;
+          justify-content: center;
+          align-items: center;
+        }
+        .all-imgs {
+          page-break-before: always;
+        }
+        .all-files {
+          page-break-after: always;
+        }
+        h3.upload-files {
+          string-set: doctitle content();
+        }
+        .navbar {
+          display: none;
+        }
+        .l-right {
+          margin: 0px;
+          display: block;
+        }
+        img {
+          page-break-inside: avoid;
+        }
+        @page {
+          size: A4 Landscape;
+          margin: 0.5cm;
+          orphans: 4;
+          widows: 2;
+          /* @top-center {
+            content: string(doctitle);
+            font-size: 12px;
+          } */
+        }
+      }
     </style>
     <title>Document</title>
   </head>
   <body>
+    <div class="page-cover">
+      <h1><i class="fa fa-jsfiddle"></i> Cloud-drive</h1>
+      <h3>@media print</h3>
+    </div>
     <nav class="navbar">
       <img src="./logo.png" />
       <button>
         <img src="./icon-file-upload.png" />
-        <h3>上傳檔案</h3>
+        <h3 class="upload-files">上傳檔案</h3>
       </button>
       <div class="navbar-icons">
         <span>
@@ -164,7 +214,7 @@
         <input class="search" placeholder="搜尋你的檔案" />
       </span>
 
-      <div>
+      <div class="all-files">
         <h5>資料夾</h5>
         <div class="l-data">
           <div class="datas">1</div>
@@ -179,7 +229,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="all-imgs">
         <h5>檔案</h5>
         <div>
           <div class="l-img">
