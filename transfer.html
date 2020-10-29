@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Document</title>
+  <style>
+    body{
+      display: inline-flex;
+    }
+    .left{
+      border:1px solid ;
+      height:300px;
+    }
+    .right{
+       border:1px solid ;
+    }
+    .btns{
+      display:flex;
+      justify-content: center;
+      flex-direction: column
+    }
+    ul{
+      list-style-type:none;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+  <ul class="left" id="left">
+      <li name='li'>
+        <input type="checkbox" name="left" value=1></input>
+        <label>1</label>
+      </li>
+      <li name='li'>
+        <input type="checkbox" name="left" value=2></input>
+        <label>2</label>
+      </li>
+      <li name='li'>
+        <input type="checkbox" name="left" value=3></input>
+        <label>3</label>
+      </li>
+      <li name='li'>
+        <input type="checkbox" name="left" value=4></input>
+        <label>4</label>
+      </li>
+      <li name='li'>
+        <input type="checkbox" name="left" value=5></input>
+        <label>5</label>
+      </li>
+  </ul>
+  <div class="btns">
+    <button onclick='up()'><i class="fa fa-angle-left"></i></button>
+    <button onclick="down()"><i class="fa fa-angle-right"></i></button>
+  </div>
+  <ul class="right" id="right"> 
+      <li  name='r-li'>
+        <input type="checkbox" value="a" name="right"></input>
+        <label>a</label>
+      </li>
+      <li name='r-li'>
+        <input type="checkbox" value="b"  name="right"></input>
+        <label>b</label>
+      </li>
+      <li  name='r-li'>
+        <input type="checkbox" value="c"  name="right"></input>
+        <label>c</label>
+      </li>
+  </ul>
+<script>
+    var items = document.getElementsByName('left');
+    var right = document.getElementById('right');
+    let left = document.getElementById('left');
+      function down(){
+        items.forEach(function(element){
+          if(element.checked){
+            element.parentElement.hidden=true;
+            createNodes(element.value, 'r-li', 'right', right)
+            element.checked=!element.checked
+          }
+        })
+    } 
+    function up(){
+      var right_items = document.getElementsByName('right');
+      right_items.forEach(function(item){
+        if(item.checked){
+            item.parentElement.hidden = true;
+            createNodes(item.value,'li','left',left)
+            item.checked = !item.checked;
+        }
+      })
+    }
+    function createNodes(value,li_name,input_name,parent){
+      let li = document.createElement('li');
+      li.name = li_name;
+      let label = document.createElement('label');
+      let labelText = document.createTextNode(value);
+      label.appendChild(labelText);
+      let createItems = document.createElement("input");
+      createItems.setAttribute("type", "checkbox");
+      createItems.name = input_name;
+      createItems.value = value;
+      li.appendChild(createItems);
+      li.appendChild(label);
+      parent.appendChild(li);
+    }
+</script>
+</body>
+</html>
